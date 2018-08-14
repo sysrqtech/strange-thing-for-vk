@@ -22,8 +22,8 @@ class Community:
 
         self.api = vk_api.VkApi(token=self.token, api_version="5.80").get_api()
 
-    def mark_important(self, message_id):
-        self.api.messages.markAsImportant(message_ids=message_id, important=1)
+    def mark_important(self, peer_id):
+        self.api.messages.markAsImportantConversation(peer_id=peer_id)
 
 
 def get_community(event: dict):
@@ -44,9 +44,11 @@ def callback():
         return community.check_string
     if event_type == "message_new":
         message = event["object"]
-        if not message["from_id"] == -community.id:
-            message_id = message["id"]
-            community.mark_important(message_id)
+        from_id = message["from_id"]
+        is_important = message["important"]
+        if from_id != -community.id and not is_important:
+            peer_id = message["peer_id"]
+            community.mark_important(peer_id)
     return "ok"
 
 
