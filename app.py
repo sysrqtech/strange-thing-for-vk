@@ -20,7 +20,7 @@ class Community:
         self.check_string = check_string
         self.token = token
 
-        self.api = vk_api.VkApi(token=self.token, api_version="5.80")
+        self.api = vk_api.VkApi(token=self.token, api_version="5.80").get_api()
 
     def mark_important(self, message_id):
         self.api.messages.markAsImportant(message_ids=message_id, important=1)
@@ -52,7 +52,7 @@ def callback():
 
 @app.route("/callback", methods=["GET"])
 def howto():
-    return flask.Markup("""
+    return flask.Markup("""<p>
     1. Зайди в Настройки группы -> Работа с API -> Callback API
     2. Вставь текущую ссылку в поле Адрес
     3. Нажми Подтвердить
@@ -61,7 +61,7 @@ def howto():
     6. PROFIT!
 
     (по всем вопросам обращайтесь <a href="https://vk.me/cybertailor">к Сайберу</a>)
-    """.strip())
+    </p>""")
 
 
 if __name__ == "__main__":
