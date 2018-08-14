@@ -1,32 +1,12 @@
-Flask Heroku Sample
+Filter 8
 ====================
 
-A simple Python Flask example application that's ready to run on Heroku.
+Отмечает все входящие сообщения как важные
+для правильной работы метода [messages.get](https://vk.com/dev/messages.get).
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
-## Development Setup
+## Как накатить
+Нажми на кнопку выше, правильно выставь все переменные,
+следуй дальнейшим инструкциям.
 
-* `pipenv install`
-
-* `pipenv shell`
-
-* `python app.py`
-
-## Screenshot
-
-![screenshot](https://i.imgur.com/wf74fxY.png)
-
-## Deploy
-
-* `heroku create`
-
-* `heroku addons:create heroku-postgresql:hobby-dev`
-
-* `git push heroku master`
-
-* Note: make sure you run `db.create_all()` to create the tables.
-
-## Contributors
-
-* [Yefim](https://twitter.com/yefim)
