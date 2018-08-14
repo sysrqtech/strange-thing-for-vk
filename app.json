@@ -1,6 +1,6 @@
 {
   "name": "Filter8",
-  "description": "Отмечает все входящие сообщения как важные для правильной работы метода messages.get. Необходимые данные: Настройки группы -> Работа с API -> Callback API",
+  "description": "Необходимые данные: Настройки группы -> Работа с API -> Callback API",
   "repository": "https://github.com/sysrqtech/filter8",
   "success_url": "/callback",
   "env": {
