@@ -2,21 +2,15 @@
 
 url = "https://pypi.python.org/simple"
 verify_ssl = true
-name = "pypi"
-
-
-[dev-packages]
-
 
 
 [packages]
 
+vk_api = "*"
 flask = "*"
-flask-sqlalchemy = "*"
-"psycopg2" = "*"
-gunicorn = "*"
+"gunicorn[gevent]" = "*"
 
 
 [requires]
 
-python_version = "2.7"
+python_version = "3.7"

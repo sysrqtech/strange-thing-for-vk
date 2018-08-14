@@ -1,16 +1,20 @@
 {
-  "name": "Flask Heroku Sample",
-  "description": "A sample Flask app on Heroku",
-  "keywords": [
-    "flask",
-    "python",
-    "sample"
-  ],
-  "repository": "https://github.com/yefim/flask-heroku-sample",
-  "scripts": {
-    "postdeploy": "python -c 'from app import db; db.create_all()'"
-  },
-  "addons": [
-    "heroku-postgresql"
-  ]
+  "name": "Filter8",
+  "description": "Отмечает все входящие сообщения как важные для правильной работы метода messages.get. Необходимые данные: Настройки группы -> Работа с API -> Callback API",
+  "repository": "https://github.com/sysrqtech/filter8",
+  "success_url": "/callback",
+  "env": {
+    "IDS": {
+      "description": "group_id (несколько значений можно указать через запятую)",
+      "value": "123,456"
+    },
+    "CHECK_STRINGS": {
+      "description": "\"Строка, которую должен вернуть сервер\" (через запятую)",
+      "value": "abc375xy,foo87bar"
+    },
+    "TOKENS": {
+      "description": "Ключи доступа с правами на чтение сообщений (через запятую)",
+      "value": "оченьдлинныйтокен1,оченьдлинныйтокен2"
+    }
+  }
 }
