@@ -9,7 +9,7 @@ import flask
 app = flask.Flask(__name__)
 
 GROUP_IDS = [int(gid.strip())
-             for gid in os.environ.get("IDS", "0").slpit(',')]
+             for gid in os.environ.get("IDS", "0").split(',')]
 CHECK_STRINGS = os.environ.get("CHECK_STRINGS", "").split(',')
 TOKENS = os.environ.get("TOKENS", "").split(',')
 
